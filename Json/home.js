@@ -1,3 +1,6 @@
+//home
+
+let arr = []
 
 document.getElementById("productForm").addEventListener("submit",(e)=>{
     e.preventDefault()
@@ -28,6 +31,7 @@ function fet(){
         return res.json()
     })
     .then((res)=>{
+        arr = res
        document.getElementById("data").innerHTML = view(res)
     })
     .catch((err)=>{
@@ -40,13 +44,13 @@ function fet(){
 function view(arr){
     console.log(arr)
    return arr.map((el)=>{
-        return `<div>
+        return `<a href="singleProduct.html?key=${el.id}"><div>
          <img src=${el.img} alt=${el.title}/> 
          <h1>${el.title}- ₹${el.price}</h1>
          <button onclick="del('${el.id}')">Delete</button>
          <button onclick="edit('${el.id}')">Edit</button>
          <button>ADD tO CART</button>
-        </div>`
+        </div></a>`
     }).join("")
 
 }
@@ -113,3 +117,14 @@ function edit(i){
     })
 }
 
+
+// function single(id){
+//     window.location.href = "singleProduct.html"
+//     localStorage.setItem("id",JSON.stringify(id))
+// }
+
+document.getElementById("sort").addEventListener("change",()=>{
+   console.log(document.getElementById("sort").value)
+  let d = arr.sort((a,b)=>+a.price - +b.price)
+  document.getElementById("data").innerHTML = view(d)
+})
