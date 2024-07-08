@@ -9,13 +9,13 @@ document.getElementById("signupForm").addEventListener("submit",(e)=>{
         pass : document.getElementById("password").value
     }
     console.log(obj.email)
-    fetch(`http://localhost:3000/users?email=${obj.email}`)
+    fetch(`https://mockserver-xqg9.onrender.com/users?email=${obj.email}`)
     .then((res)=>res.json())
     .then((res)=>{
         if(res.length>0){
             alert("User Is already registered")
         }else{
-            fetch("http://localhost:3000/users",{
+            fetch("https://mockserver-xqg9.onrender.com/users",{
                 method : 'POST',
                 headers : {
                     'content-type' : 'application/json'

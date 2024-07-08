@@ -12,7 +12,7 @@ async function view(){
   // .catch((err)=>{
   //   console.log(err)
   // })
-   let data = await fetch(`http://localhost:3000/products/${id}`)
+   let data = await fetch(`https://mockserver-xqg9.onrender.com/products/${id}`)
    let dee = await data.json()
    document.getElementById("data").innerHTML = v(dee)
 }
@@ -37,12 +37,12 @@ function v(el){
 
 function post(el){
     
- fetch(`http://localhost:3000/products/${el}`)
+ fetch(`https://mockserver-xqg9.onrender.com/products/${el}`)
   .then((res)=>{
     return res.json()
   })
   .then((res)=>{
-    fetch("http://localhost:3000/cart",{
+    fetch("https://mockserver-xqg9.onrender.com/cart",{
         method : 'POST',
         headers :{
             'Content-type' : 'application/json'

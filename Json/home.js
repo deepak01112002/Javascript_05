@@ -9,7 +9,7 @@ document.getElementById("productForm").addEventListener("submit",(e)=>{
         img : document.getElementById("img").value,
         price : document.getElementById("price").value
     }
-    fetch("http://localhost:3000/products",{
+    fetch("https://mockserver-xqg9.onrender.com/products",{
         method : 'POST',
         headers :{
             'Content-type' : 'application/json'
@@ -26,7 +26,7 @@ document.getElementById("productForm").addEventListener("submit",(e)=>{
 })
 
 function fet(){
-    fetch("http://localhost:3000/products")
+    fetch("https://mockserver-xqg9.onrender.com/products")
     .then((res)=>{
         return res.json()
     })
@@ -61,7 +61,7 @@ fet()
 
 function del(i){
 
-    fetch(`http://localhost:3000/products/${i}`,{
+    fetch(`https://mockserver-xqg9.onrender.com/products/${i}`,{
         method : 'DELETE',
         headers :{
             'Content-type' : 'application/json'
@@ -81,7 +81,7 @@ function del(i){
 
 function edit(i){
     document.getElementById("update").style.display = "block"
-    fetch(`http://localhost:3000/products/${i}`)
+    fetch(`https://mockserver-xqg9.onrender.com/products/${i}`)
     .then((res)=>{
         return res.json()
     })
@@ -96,7 +96,7 @@ function edit(i){
                 img : document.getElementById("img").value,
                 price : document.getElementById("price").value
             }
-            fetch(`http://localhost:3000/products/${res.id}`,{
+            fetch(`https://mockserver-xqg9.onrender.com/products/${res.id}`,{
                 method : "PUT",
                 headers : {
                     'Content-Type' : "application/json"

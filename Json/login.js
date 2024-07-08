@@ -3,7 +3,7 @@ document.getElementById("loginForm").addEventListener("submit",async (e)=>{
     e.preventDefault()
     let email = document.getElementById("email").value
     let password =document.getElementById("password").value
-    let d = await fetch("http://localhost:3000/users")
+    let d = await fetch("https://mockserver-xqg9.onrender.com/users")
     let data = await d.json()
     
     let val = data.filter((el)=>el.email == email)
