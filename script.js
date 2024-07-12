@@ -1,17 +1,28 @@
-// while(condition){
+function fun(){
+   let a = document.getElementById("data").value
+   
+   change(a)
 
-// }
+//    const factorial = (num)=>{
+//       let pro = 1;
+      
+//       for(let x=1; x<=num; x++){
+//         pro *= x;
+//       }
 
-// do{
+//       return pro;
+//   }
+//   document.getElementById("d").innerText = factorial(a)
 
-// }while(condtion)
-
-let a = 0; 
-while(a<0){
-    console.log("Hello")
-    a++;
+     function change(num){
+          if(num < 0){
+             return -(num); =
+          }else{
+             return num;
+          }
+     }
+    
 }
 
-// do{
-//   console.log("Hello")
-// }while(a<0)
+
+
