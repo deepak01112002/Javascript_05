@@ -3,7 +3,7 @@ function red(){
     let arr = [
     {
         quote : "Honesty is Best Policy",
-        person : "M.H. Gand"
+        person : "M.H. Gandhi"
     },
     {
         quote : "Hudle makes you best developer",
