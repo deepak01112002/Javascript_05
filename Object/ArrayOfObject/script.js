@@ -16,9 +16,9 @@ function red(){
    ]
 
 
-   let number = 2;
+   let number = Math.floor(Math.random()*arr.length);
 
-   document.getElementById("quote").innerHTML = "<h1>arr[number].quote</h1>"
+   document.getElementById("quote").innerHTML = `<h1>arr[number].quote</h1>`
 
 
 
