@@ -1,13 +1,4 @@
-let student1 = {
-    name : "ashirwad",
-    GRID : 5105,
-    subject : "ai"
-}
-let student2 = {
-    name : "Dhol",
-    GRID : 420,
-    subject : "accounting"
-}
+
 
 
 class Students{

@@ -4,38 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .login{
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <div class="Signup">
         <h1>Signup Page</h1>
         <form id="form">
              <input type="text" placeholder="Username" id="username" ><br>
-             <span  id="usernameError"></span><br>
              <input type="email" placeholder="Email" id="email" ><br><br>
-             <span id="EmailError"></span><br>
              <input type="text" placeholder="Password" id="password" ><br><br>
-             <span id="PasswordError"></span><br>
              <input type="submit">
         </form>
         <p id="ExistingUser">Existing User ? Login</p>
     </div>
-    <div class="login">
+    <div style="display: none;" class="login">
         <h1>Login Page</h1>
         <form class="hide" id="Loginform">
              <input type="email" placeholder="Email" id="Loginemail" ><br><br>
-             <span id="EmailError"></span><br>
              <input type="text" placeholder="Password" id="Loginpassword" ><br><br>
-             <span id="PasswordError"></span><br>
              <input type="submit">
         </form>
         <p id="sinUser">Create an Account ? Singup</p>
     </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
