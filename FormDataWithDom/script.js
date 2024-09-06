@@ -1,6 +1,6 @@
 
 let tbody = document.querySelector("tbody")
-let arr = [];
+let arr = JSON.parse(localStorage.getItem("data")) || [];
 
 
 document.getElementById("formData").addEventListener("submit",(e)=>{
@@ -16,6 +16,7 @@ document.getElementById("formData").addEventListener("submit",(e)=>{
       PRICE : price
    }
    arr.push(obj)
+   localStorage.setItem("data",JSON.stringify(arr))
    view()
 })
 
@@ -35,11 +36,18 @@ function view(){
       let td4 = document.createElement("td")
       let btn = document.createElement("button")
       btn.innerText = "Add To Cart"
+      let cart = JSON.parse(localStorage.getItem("cart")) || []
+      btn.addEventListener("click",()=>{
+         cart.push(el)
+         localStorage.setItem("cart",JSON.stringify(cart))
+         console.log(cart)
+      })
       let td5 = document.createElement("td")
       let btn2 = document.createElement("button")
       btn2.innerText = "Delete"
       btn2.addEventListener("click",()=>{
          arr.splice(index,1)
+         localStorage.setItem("data",JSON.stringify(arr))
          view()
       })
       td5.append(btn2)
