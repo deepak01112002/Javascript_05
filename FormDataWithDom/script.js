@@ -29,6 +29,7 @@ function view(){
       let img = document.createElement("img")
       img.setAttribute("src",el.IMAGE)
       img.setAttribute("alt",el.TITLE)
+      img.setAttribute("width","150px")
       let td2 = document.createElement("td")
       td2.innerText = el.TITLE
       let td3 = document.createElement("td")
@@ -36,11 +37,10 @@ function view(){
       let td4 = document.createElement("td")
       let btn = document.createElement("button")
       btn.innerText = "Add To Cart"
-      let cart = JSON.parse(localStorage.getItem("cart")) || []
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
       btn.addEventListener("click",()=>{
-         cart.push(el)
+         cart.push(el);
          localStorage.setItem("cart",JSON.stringify(cart))
-         console.log(cart)
       })
       let td5 = document.createElement("td")
       let btn2 = document.createElement("button")
