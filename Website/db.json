@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "b37a",
+      "email": "deepak@gmail.com",
+      "password": "12345",
+      "username": "Deepak"
+    },
+    {
+      "id": "7631",
+      "email": "ronal193@gmail.com",
+      "password": "193",
+      "username": "ronak"
+    },
+    {
+      "id": "86ae",
+      "email": "Dhol@gmail.com",
+      "password": "123",
+      "username": "Dhol"
+    }
+  ],
+  "products" : [
+
+  ],
+  "cart" : []
+}
