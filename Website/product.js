@@ -26,9 +26,42 @@ function view(arr){
                   <p>Price :- ${el.price}</p>
                   <p>Category :- ${el.category}</p>
              </div>
+             <button onclick="add(${el.id})">Add to Cart</button>
           </div>
         
         `
     }).join("")
 
+}
+
+function add(id){
+   fetch(`https://fakestoreapi.com/products/${id}`) 
+.then((res)=>{
+   return res.json()
+})
+.then((res)=>{
+    
+    posting(res)
+})
+.catch((err)=>{
+   console.log(err)
+})
+}
+
+
+function posting(obj){
+  fetch("http://localhost:3000/cart",{
+   method : "POST",
+   headers : {
+       "Content-Type" : "application/json"
+   },
+   body : JSON.stringify(obj)
+  })
+  .then((Res)=>Res.json())
+  .then((Res)=>{
+   console.log(Res)
+  })
+  .catch((err)=>{
+   console.log(err)
+  })
 }
